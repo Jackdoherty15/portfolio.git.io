@@ -1,0 +1,287 @@
+body {
+    background-color: #f8fafc; /* Sets the entire page background to white */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    font-family: Arial, sans-serif; /* Optional: Choose a font */
+}
+
+
+ /* Slideshow Container */
+ .slideshow-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    position: relative;
+}
+
+/* Slide Styles */
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+    height: auto;
+    max-height: 500px; /* Max height for consistency */
+    object-fit: contain; /* Ensures the entire image is visible */
+}
+
+/* Dots/Indicators */
+.dots-container {
+    text-align: center;
+    padding: 10px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #111827;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.activedot, .dot:hover {
+    background-color: #40d49c; /* Muted red for active dot */
+}
+
+/* Project Descriptions Styles */
+.project-descriptions {
+    display: flex; /* Flex layout for project items */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center the items */
+    margin: 40px 0; /* Space above and below */
+}
+
+.project-item {
+    flex: 1 1 100%; /* Each item takes full width on smaller screens */
+    margin: 20px; /* Space between items */
+    background-color: #111827; /* White background for items */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Prevent overflow */
+    text-align: center; /* Center text */
+    padding: 15px; /* Padding inside the boxes */
+    color: #f8fafc;
+    font-size: 1.3em;
+}
+
+/* Set fixed height for images */
+.project-item img {
+    width: 100%; /* Full width of item */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image covers the space */
+    border-radius: 5px; /* Rounded corners for images */
+    box-sizing: border-box; /* Include padding/border in element's total width and height */
+}
+
+/* Media query for medium screens (768px to 1024px) */
+@media (min-width: 768px) {
+    .project-item {
+        flex: 1 1 45%; /* Two items per row */
+    }
+}
+
+/* Media query for large screens (1024px and above) */
+@media (min-width: 1024px) {
+    .project-item {
+        flex: 1 1 30%; /* Three items per row */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slideshow-container {
+        max-width: 100%; /* Adjusts slideshow screen width for larger screens */
+    }
+
+    .mySlides img {
+        max-height: 300px; /* Adjust height for smaller screens */
+        object-fit: contain; /* Ensures the entire image is visible */
+    }
+}
+
+/* Slideshow Navigation Styles */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -50px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    transition: 0.6s ease;
+    border-radius: 5px;
+    user-select: none;
+    background-color: black;
+}
+
+.next {
+    right: 0;
+    border-radius: 5px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darken the background on hover */
+}
+
+        /* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2000; /* Ensure the modal is on top of all elements */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    margin-top: 0px;
+}
+
+/* Header Section */
+.header-section {
+    margin-top: 80px; /* Adjust to avoid overlapping */
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    margin-top: 100px; /* Ensure no overlap with header */
+}
+
+
+
+/* Slideshow Navigation Styles */
+.prev, .next {
+    z-index: 1; /* Lower than modal */
+}
+
+
+
+
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    height: auto;
+    z-index: 1;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #40d49c;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: 1;
+}
+
+.close:hover,
+.close:focus {
+    color: #40d49c; /* Change color on hover */
+    cursor: pointer;
+}
+
+
+.header-section {
+    background-color: #f8fafc; /* Background color of the header */
+    text-align: center; /* Center the text */
+    padding: 50px 20px; /* Padding for spacing */
+}
+
+.hollow-text {
+    font-size: 4em; /* Adjust font size as needed */
+    color: transparent; /* Make text transparent */
+    -webkit-text-stroke: 2.2px #111827; /* Outline the text with the specified color */
+    margin: 0; /* Remove default margin */
+    transition: color 0.3s ease; /* Transition for smooth effect */
+    margin-top: 50px;
+}
+
+.hollow-text:hover {
+    color: #111827; /* Change the text color on hover */
+}
+
+.header-subtext {
+    font-size: 1.5rem; /* Subtext font size */
+    color: #40d49c; /* Text color */
+    margin-top: 10px; /* Margin for spacing */
+}
+
+/* Media query for medium screens (768px to 1024px) */
+@media (min-width: 768px) {
+    .hollow-text {
+        font-size: 5rem; /* Smaller font size */
+    }
+}
+
+/* Media query for small screens (up to 768px) */
+@media (max-width: 768px) {
+
+    .hollow-text {
+        font-size: 3rem; /* Even smaller font size */
+    }
+}
+
+
+
+
+
+
+.project-item {
+    flex: 1 1 100%; /* Each item takes full width on smaller screens */
+    margin: 20px; /* Space between items */
+    background-color: #111827; /* White background for items */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Prevent overflow */
+    text-align: center; /* Center text */
+    padding: 15px; /* Padding inside the boxes */
+}
+
+/* Adding padding to the image */
+.project-item img {
+    width: 100%; /* Full width of item */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
+    padding: 10px; /* Padding around the image */
+    box-sizing: border-box; /* Ensures padding does not increase width */
+    cursor: pointer;
+}
+
+/* Media query for medium screens (768px to 1024px) */
+@media (min-width: 768px) {
+    .project-item {
+        flex: 1 1 45%; /* Two items per row */
+    }
+}
+
+/* Media query for large screens (1024px and above) */
+@media (min-width: 1024px) {
+    .project-item {
+        flex: 1 1 30%; /* Three items per row */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slideshow-container {
+        max-width: 100%; /* Adjusts slideshow screen width for larger screens */
+    }
+
+    .mySlides img {
+        max-height: 300px; /* Adjust height for smaller screens */
+        object-fit: contain; /* Ensures the entire image is visible */
+    }
+}
+
+
+

@@ -1,0 +1,262 @@
+body {
+    background-color: #111827; /* Sets the entire page background to white */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    font-family: Arial, sans-serif; /* Optional: Choose a font */
+}
+
+
+/* Link Styles (Non-header Links) */
+a {
+    color: #40d49c; /* Dark grey for general links */
+    text-decoration: none; /* Removes underline from links */
+    font-size: 18px; /* Font size for links */
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+a:hover {
+    color: #f8fafc; /* Muted red for hover effect on non-header links */
+}
+
+/* Hero Section with Animation */
+.hero {
+    min-height: 800px; /* Minimum height for the hero section to fit content */
+    background-color: #f8fafc; /* Light grey background */
+    display: flex; /* Flexbox layout for centering content */
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    padding: 60px; /* Additional padding around the section */
+    gap: 50px; /* Adds space between heading and image */
+    box-sizing: border-box; /* Include padding in height calculation */
+    margin-top: 50px;
+}
+
+.ml11 {
+    font-weight: 700; /* Bold font */
+    font-size: 12vw; /* Increased font size for the heading */
+    margin-bottom: 20px; /* Additional space below the heading */
+}
+
+.ml11 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 0.2em 0.1em 0.3em; /* Adjusted padding around the text */
+    color: #111827; /* Text color */
+}
+
+.ml11 .line {
+    opacity: 0; /* Initially hides the line */
+    position: absolute; /* Positions line relative to text */
+    left: 0;
+    height: 100%; /* Full height of the text */
+    width: 3px; /* Thin line */
+    background-color: #111827; /* Line color */
+    transform-origin: 0 50%; /* Transformation anchor point */
+}
+
+.ml11 .line1 {
+    top: 0; /* Positions the line at the top */
+    left: 0;
+}
+
+.ml11 .letter {
+    display: inline-block; /* Allows for individual animation of each letter */
+    line-height: 1em; /* Ensures even spacing */
+}
+
+/* Styles for the Rectangular Image Container */
+.rectangular-image {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically */
+    width: 200px; /* Desired width of the rectangle */
+    height: 250px; /* Desired height of the rectangle */
+    border: 5px solid #111827; /* Border around the rectangular container */
+    overflow: hidden; /* Ensures the image does not overflow the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+    border-radius: 10px;
+}
+
+/* Image inside the rectangular container */
+.rectangular-image img {
+    width: 100%; /* Set image width to match container width */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: cover; /* Covers the entire container */
+    transform: scale(1); /* Adjust the scale as needed to zoom in or out */
+}
+
+
+/* Large Text Section */
+.large-text-section {
+    margin-top: 20px; /* Adds space above the section */
+    padding: 20px 0; /* Adds vertical padding */
+    text-align: center; /* Centers the text */
+}
+
+/* Large Text Paragraph */
+.large-text-section p {
+    font-size: 24px; /* Large font size for the text */
+    font-weight: bold; /* Bold font */
+    color: #111827; /* Dark color for the text */
+    margin: 0; /* Removes default margin */
+}
+
+/* Media Query for Larger Text on Big Screens */
+@media (min-width: 1024px) {
+    .large-text-section p {
+        font-size: 32px; /* Increases text size for larger screens */
+    }
+}
+
+/* Highlighted Name Style */
+.highlighted-name {
+    color: #40d49c; /* Muted red color for your name */
+    font-weight: bold; /* Makes the text bold */
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+
+
+
+
+
+/* About Me Section */
+.about-me {
+    padding: 50px 20px; /* Adds padding to the section */
+    background-color: #111827; /* Dark grey background for this section */
+    border-radius: 8px; /* Rounded corners */
+    max-width: 1500px; /* Maximum width for the section */
+    text-align: center; /* Centers the text */
+}
+
+.about-me h2 {
+    font-size: 50px; /* Font size for section heading */
+    color: #40d49c; /* Light grey color for heading */
+    margin-bottom: 50px; /* Adds space below the heading */
+}
+
+.about-me p {
+    font-size: 20px; /* Font size for paragraphs */
+    line-height: 1.5; /* Adds space between lines */
+    color: #f8fafc; /* Light grey color for paragraph text */
+    margin-bottom: 15px; /* Adds space below each paragraph */
+}
+
+.about-me p strong {
+    color: #40d49c; /* Dark slate blue color for bold text */
+}
+
+/* About Me Links */
+.about-me a {
+    display: inline-block; /* Makes the links block-level for padding */
+    color: #40d49c; /* Muted red color for links */
+    text-decoration: none; /* Removes underline from links */
+    font-size: 18px; /* Font size for links */
+    margin-top: 10px; /* Adds space above the link */
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.about-me a:hover {
+    color: #f8fafc; /* Muted red hover effect */
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid; /* CSS grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
+    grid-gap: 40px; /* Adds space between grid items */
+    padding: 50px 20px; /* Adds padding to the section */
+    margin-top: 50px; /* Adds space above the grid */
+}
+
+.grid-item {
+    background-color: #111827; /* White background for each grid item */
+    padding: 30px; /* Adds padding inside the grid item */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Centers the text */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+    color: #f8fafc;
+    border: 6px solid #40d49c;
+}
+
+.grid-item:hover {
+    background-color: #40d49c; /* Muted red background on hover */
+    transform: translateY(-10px); /* Moves the item up on hover */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Adds a larger shadow on hover */
+    color: #FFFFFF; /* White text on hover */
+}
+.grid-item h2 {
+    color: #40d49c;
+    font-size: 2.5em;
+}
+
+.grid-item p {
+    font-size: 1.5em;
+}
+
+.grid-item:hover a {
+    color: #111827;
+}
+
+.grid-item:hover h2 {
+    color: #111827;
+}
+/* Grid Links */
+.grid-item a {
+    color: #40d49c; /* Dark grey for links */
+    text-decoration: none; /* Removes underline from links */
+    font-size: 18px; /* Font size for links */
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.grid-item a:hover {
+    color: #FFFFFF; /* White link color on hover */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        height: 250px; /* Adjusts hero section height for smaller screens */
+    }
+
+    .ml11 {
+        font-size: 10vw; /* Increases font size for smaller screens */
+    }
+    .grid-container {
+        grid-template-columns: 1fr; /* Stacks grid items in a single column */
+    }
+
+    .grid-item {
+        padding: 20px; /* Adjusts padding for smaller screens */
+    }
+
+    .grid-item h2 {
+        font-size: 24px; /* Reduces font size for grid headers */
+    }
+
+    .grid-item p {
+        font-size: 16px; /* Reduces font size for grid text */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 200px; /* Further reduces hero height for very small screens */
+    }
+
+    .ml11 {
+        font-size: 12vw; /* Adjusts text size */
+    }
+
+    .grid-container {
+        grid-gap: 15px; /* Reduces grid gap */
+    }
+
+}
+
+
+

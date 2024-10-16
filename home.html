@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metadata and links to stylesheets -->
+    <meta charset="UTF-8"> <!-- Defines the character set for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures the page is responsive on mobile devices -->
+    <title>Portfolio - Jack</title> <!-- The title of the webpage -->
+    <link rel="stylesheet" href="stylehome.css"> <!-- Links to the external CSS file -->
+    <link rel="stylesheet" href="generalstyles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <!-- Logo on the left -->
+            <div class="logo"> 
+                <h1>JD</h1>
+            </div>
+            <!-- Navigation links -->
+            <nav>
+                <ul>
+                    <li><a href="home.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <!-- Hamburger menu for small screens -->
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+<!-- Hero Section with Animated Title -->
+<section class="hero">
+    <h1 class="ml11">
+        <!-- Text Wrapper for the animation -->
+        <span class="text-wrapper">
+            <span class="line line1"></span> <!-- Line element used for animation -->
+            <span class="letters">Welcome</span> <!-- The "Welcome" text that will be animated -->
+        </span>
+    </h1>
+
+    <!-- Rectangular Image Section -->
+    <div class="rectangular-image">
+        <img src="Images/portrait.jpeg" alt="Profile Image">
+    </div>
+
+    <!-- Large Text Section -->
+    <div class="large-text-section">
+        <p>Hey, my name is <span class="highlighted-name">Jack Doherty</span>. On this website you can checkout what I'm working on and other details about me.</p>
+    </div>
+</section>
+
+
+
+
+
+    
+
+    <!-- About Me Section -->
+    <section class="about-me">
+        <!-- Information about the user -->
+        <h2>About Me</h2>
+        <p><strong>Age:</strong> 16, turning 17 December 19th.</p>
+        <p><strong>School:</strong> Saint Kentigern College.</p>
+        <p><strong>Job:</strong> Surf Life Saving New Zealand, Lifeguard.</p>
+        <p><strong>Sports:</strong> Baseball, Gym, Waterpolo.</p>
+        <p><strong>Summary</strong> <br> I am a hardworking and diligent year 12 student. I achieved excellence endorsement in NCEA level 1 last year. I am ready to start working and to learn and gain new skills and work experience. I am honest, reliable, and trustworthy.</p><br>
+        <p><strong>More Details about me</strong> <br> Below is a link to a page which includes more details about me including key achievements and past jobs, etc. It also has a link to my CV.</p><br>
+        <li><a href="about.html">About Me Page Link</a></li> <!-- Link to the "About Me" page -->
+    </section>
+
+    <!-- Main Content (Grid Section) -->
+    <main>
+        <!-- Grid Section -->
+        <section class="grid-container">
+            <div class="grid-item">
+                <h2>Interests</h2>
+                <p>I have many interests outside of coding and school. Some of these include sports such as Baseball, Waterpolo, and going to the gym. I am also a lifeguard for Surf Life Saving New Zealand. I enjoy spending free time socializing with family and friends and doing outdoor activities such as camping.</p>
+            </div>
+            <div class="grid-item">
+                <h2>Skills</h2>
+                <p>I believe I have many valuable core skills such as being diligent, reliable, and hardworking. I also believe I am a good team player, have great attention to detail, and am very friendly/approachable.</p>
+            </div>
+            <div class="grid-item">
+                <h2>My Projects</h2>
+                <p>During my time in school, I have worked on 4 separate coding projects. These can all be seen on the projects page linked below.</p><br>
+                <p><li><a href="projects.html">Past Projects</a></li></p> <!-- Link to the "Projects" page -->
+            </div>
+            <div class="grid-item">
+                <h2>Contact Me</h2>
+                <p>If anyone wishes to get in contact with me, below is a link to a page where you can contact me about any questions/inquiries.</p><br>
+                <p><li><a href="contact.html">Contact Me</a></li></p> <!-- Link to the "Contact" page -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Jack Doherty. All rights reserved.</p> <!-- Copyright information -->
+    </footer>
+
+
+    <script>
+        // JavaScript to toggle the navigation menu on small screens
+        const hamburger = document.querySelector('.hamburger');
+        const navUL = document.querySelector('nav ul');
+
+        hamburger.addEventListener('click', () => {
+            navUL.classList.toggle('show');
+        });
+    </script>
+    
+
+    <!-- Anime.js for Title Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script> <!-- Importing the Anime.js library -->
+<script>
+    // Wait for the DOM to be fully loaded before executing the script
+    document.addEventListener("DOMContentLoaded", function () {
+
+        // Select the text element with class 'letters' inside '.ml11' and wrap each letter in a span element
+        var textWrapper = document.querySelector('.ml11 .letters');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+        // Function to animate the line and text
+        function animateLine() {
+            // Get the width of the text to animate the line according to the text length
+            var textWidth = document.querySelector('.ml11 .letters').getBoundingClientRect().width;
+
+            // Create an Anime.js timeline for the animation, with loop set to true
+            anime.timeline({ loop: true })
+                // First step: animate the vertical scale of the line from 0 to 1
+                .add({
+                    targets: '.ml11 .line', // Target the element with class 'line'
+                    scaleY: [0, 1], // Animate the Y-axis scaling (grow the line vertically)
+                    opacity: [0.5, 1], // Increase the opacity from 0.5 to 1
+                    easing: "easeOutExpo", // Apply a smooth easing for the animation
+                    duration: 1000 // Duration of the animation in milliseconds
+                })
+                // Second step: animate the horizontal translation of the line across the text
+                .add({
+                    targets: '.ml11 .line', // Target the same line element
+                    translateX: [0, textWidth + 10], // Move the line horizontally according to the text width
+                    easing: "easeOutExpo", // Apply the same easing for smooth movement
+                    duration: 700, // Duration of the translation animation
+                    delay: 100 // Delay before this animation starts (after the first step)
+                })
+                // Third step: animate each letter appearing one by one
+                .add({
+                    targets: '.ml11 .letter', // Target each letter (wrapped in the 'letter' span)
+                    opacity: [0, 1], // Animate the opacity from invisible (0) to visible (1)
+                    easing: "easeOutExpo", // Smooth easing for the letter appearance
+                    duration: 600, // Duration for each letter to fully appear
+                    offset: '-=775', // Start this step 775ms earlier than it would (overlap with the previous animation)
+                    delay: (el, i) => 50 * (i + 1) // Delay the appearance of each letter, 50ms multiplied by its index
+                })
+                // Final step: fade out the entire text
+                .add({
+                    targets: '.ml11', // Target the container with the class 'ml11'
+                    opacity: 0, // Animate the opacity to fade out the entire text
+                    duration: 1000, // Duration of the fade-out
+                    easing: "easeOutExpo", // Smooth easing for the fade-out
+                    delay: 1000 // Delay before the fade-out begins
+                });
+        }
+
+        // Call the function to start the animation
+        animateLine();
+
+        // Add an event listener for window resize to adjust the line's animation based on new text width
+        window.addEventListener('resize', function () {
+            anime.remove('.ml11 .line'); // Remove the current animation on the line to prevent conflicts
+            animateLine(); // Recalculate and restart the animation
+        });
+    });
+</script>
+
+

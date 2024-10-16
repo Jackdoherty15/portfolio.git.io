@@ -1,0 +1,139 @@
+/* General Styles */
+* {
+    margin: 0; /* Remove default margin from all elements */
+    padding: 0; /* Remove default padding from all elements */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Set default font family */
+    padding-top: 70px; /* Add padding to avoid content being hidden behind the fixed navbar */
+}
+
+/* Container */
+.container {
+    width: 90%; /* Set container width to 90% of the viewport width */
+    max-width: 1200px; /* Limit the maximum width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center items within the container */
+    justify-content: space-between; /* Distribute items evenly with space between */
+}
+
+/* Header Styles */
+header {
+    background-color: #40d49c; /* Set the background color of the header */
+    padding: 10px 0; /* Add vertical padding to the header */
+    display: flex; /* Use flexbox for header layout */
+    justify-content: space-between; /* Space out elements within the header */
+    position: fixed; /* Fix the header to the top of the viewport */
+    top: 0; /* Position the header at the top */
+    width: 100%; /* Make the header span the full width of the viewport */
+    z-index: 999; /* Ensure the header stays on top of other elements */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for visual separation */
+}
+
+/* Logo on the left */
+.logo {
+    margin-right: auto; /* Push the logo to the left side */
+    z-index: 2; /* Ensure the logo stays above other elements */
+}
+
+.logo h1 {
+    font-size: 5em; /* Set a large font size for the logo */
+    width: 120px; /* Define a fixed width for the logo */
+    border: 5px solid #111827; /* Add a solid border around the logo */
+    padding: 5px; /* Add padding inside the logo */
+    border-radius: 10px; /* Round the corners of the logo border */
+    color: #111827; /* Set the logo text color */
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none; /* Remove default list styles */
+    display: flex; /* Use flexbox for navigation layout */
+    justify-content: flex-end; /* Align navigation items to the right */
+    margin-left: auto; /* Push the navigation to the right side */
+}
+
+nav ul li {
+    margin-left: 30px; /* Add space between navigation items */
+}
+
+nav ul li a {
+    color: #111827; /* Set the link text color */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 18px; /* Set font size for links */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+nav ul li a:hover {
+    color: #f8fafc; /* Change link color on hover */
+}
+
+nav ul li a.active {
+    color: #f8fafc; /* Set active link color */
+    font-weight: bold; /* Make active link bold */
+}
+
+/* Hamburger Menu for Small Screens */
+.hamburger {
+    display: none; /* Hide hamburger menu by default */
+    flex-direction: column; /* Arrange bars vertically when displayed */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.hamburger div {
+    width: 25px; /* Set width of hamburger bars */
+    height: 3px; /* Set height of hamburger bars */
+    background-color: #111827; /* Set color of hamburger bars */
+    margin: 5px 0; /* Add space between bars */
+    transition: 0.4s; /* Smooth transition for transformations */
+    z-index: 2; /* Ensure hamburger bars stay above other elements */
+}
+
+/* Footer Section */
+footer {
+    background-color: #40d49c; /* Set the footer background color */
+    color: #111827; /* Set the footer text color */
+    text-align: center; /* Center the footer text */
+    padding: 20px 0; /* Add vertical padding to the footer */
+    margin-top: 0px; /* Add space above the footer */
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+    nav ul {
+        display: none; /* Hide navigation list by default */
+        flex-direction: column; /* Arrange navigation items vertically */
+        width: 100%; /* Set navigation width to full screen width */
+        background-color: #40d49c; /* Set navigation background color */
+        position: absolute; /* Position navigation relative to parent element */
+        top: 70px; /* Position navigation below the header */
+        left: 0; /* Align navigation to the left side */
+        z-index: 1; /* Ensure navigation stays on top */
+    }
+
+    nav ul li {
+        text-align: center; /* Center-align navigation items */
+        margin: 15px 0; /* Add vertical space between items */
+    }
+
+    .hamburger {
+        display: flex; /* Display hamburger menu */
+    }
+
+    nav ul.show {
+        display: flex; /* Show navigation list when the menu is active */
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        font-size: 14px; /* Reduce footer text size */
+    }
+    .logo img {
+        width: 100px; /* Reduce logo width */
+    }
+}
+

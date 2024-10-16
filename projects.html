@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Jack</title>
+    <link rel="stylesheet" href="styleprojects.css">
+    <link rel="stylesheet" href="generalstyles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <!-- Logo on the left side of the navigation bar -->
+            <div class="logo"> 
+                <h1>JD</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <!-- Hamburger menu for smaller screen sizes -->
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero section with a main heading for the page -->
+    <section class="header-section">
+        <h1 class="hollow-text">Past Projects</h1>
+    </section>
+
+    <!-- Slideshow Section to display project images -->
+    <section class="slideshow-container">
+        <!-- Each div here represents an individual slide -->
+        <div class="mySlides fade">
+            <img src="Images/Project1.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="Images/project2.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="Images/project3.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="Images/project4.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="Images/project5.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="Images/project6.png" style="width:100%">
+        </div>
+        <!-- Navigation buttons for slideshow -->
+        <a class="prev" onclick="changeSlides(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlides(1)">&#10095;</a>
+        <!-- Dot indicators to show the current slide -->
+        <div class="dots-container" style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+    </section>
+
+    <!-- Additional header section for the image gallery -->
+    <div class="header-section">
+        <h1 class="hollow-text">Image Gallery</h1>
+        <p class="header-subtext">Click on images to expand</p>
+    </div>
+
+    <!-- Project Descriptions Section -->
+    <div class="project-descriptions">
+        <!-- Each div represents a project item with a title, image, and description -->
+        <div class="project-item" onclick="openModal('Images/Project1.png')">
+            <h3>FoodTech Website 2023</h3> 
+            <img src="Images/Project1.png" alt="Project 1">
+            <p>This project showcases a user-friendly website designed to showcase the work produced by SKC food technology students. It highlights the integration of modern web design principles, responsive layouts, and features such as an online menu, a blog section for food-related articles, and a contact form for customer inquiries.</p>
+        </div>
+        <div class="project-item" onclick="openModal('Images/project2.png')">
+            <h3>Product Design 2023</h3> 
+            <img src="Images/project2.png" alt="Project 2">
+            <p>In this project, the focus is on the design and presentation of innovative tech products made by students at SKC in the product design classes. The image illustrates detailed sketches, 3D models, and prototypes, showcasing the iterative design process. Emphasis is placed on user experience, functionality, and aesthetic appeal to ensure market competitiveness.</p>
+        </div>
+        <div class="project-item" onclick="openModal('Images/project3.png')">
+            <h3>Homepage Tech Exhibit 2023</h3> 
+            <img src="Images/project3.png" alt="Project 3">
+            <p>This project represents a homepage design for a technology exhibition. The image features a vibrant layout that captures the essence of innovation and technology. Key elements include highlighted exhibitors, event schedules, and interactive sections to engage visitors and encourage participation in the exhibition.</p>
+        </div>
+        <div class="project-item" onclick="openModal('Images/project4.png')">
+            <h3>Slime Maze Development</h3> 
+            <img src="Images/project4.png" alt="Project 4">
+            <p>This project focuses on the development of a game called "Slime Maze." The image shows the design of various levels, featuring colorful graphics and engaging gameplay mechanics. The project highlights the programming and artistic elements involved in creating a fun and interactive gaming experience.</p>
+        </div>
+        <div class="project-item" onclick="openModal('Images/project5.png')">
+            <h3>Slime Maze Pixel Editing</h3> 
+            <img src="Images/project5.png" alt="Project 5">
+            <p>This project involves pixel art design for the "Slime Maze" game. The image illustrates the pixel editing process, showcasing the creation of unique characters and environments. Attention to detail in color selection and design ensures that each element contributes to the game's overall aesthetic.</p>
+        </div>
+        <div class="project-item" onclick="openModal('Images/project6.png')">
+            <h3>Slime Maze Opening Screen</h3> 
+            <img src="Images/project6.png" alt="Project 6">
+            <p>This project presents the opening screen design for "Slime Maze." The image captures the colorful and inviting atmosphere of the game, featuring the main character and title. The design is aimed at attracting players’ attention and creating an engaging first impression that invites them to explore the maze.</p>
+        </div>
+    </div>
+
+    <!-- Modal for displaying full-size images -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jack Doherty. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to toggle the navigation menu on small screens
+        const hamburger = document.querySelector('.hamburger');
+        const navUL = document.querySelector('nav ul');
+
+        hamburger.addEventListener('click', () => {
+            navUL.classList.toggle('show');
+        });
+
+        // JavaScript for the Slideshow functionality
+        var slideIndex = 1; // Initial slide index
+        showSlides(slideIndex); // Display the initial slide
+
+        // Function to change the slide when the user clicks next/prev buttons
+        function changeSlides(n) {
+            showSlides(slideIndex += n); // Update the slide index and show the new slide
+        }
+
+        // Function to set the current slide when the user clicks a dot indicator
+        function currentSlide(n) {
+            showSlides(slideIndex = n); // Set the slide index to the chosen slide and show it
+        }
+
+        // Main function to show the slide based on the current slide index
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides"); // Get all slide elements
+            var dots = document.getElementsByClassName("dot"); // Get all dot elements
+
+            // If the index exceeds the number of slides, reset it to 1
+            if (n > slides.length) { slideIndex = 1 }
+            // If the index is less than 1, set it to the last slide
+            if (n < 1) { slideIndex = slides.length }
+
+            // Hide all slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Remove the active class from all dots
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" activedot", "");
+            }
+
+            // Show the current slide and highlight the corresponding dot
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " activedot";
+        }
+
+        // Modal functionality for displaying full-size images
+        function openModal(imageSrc) {
+            var modal = document.getElementById("myModal"); // Get the modal element
+            var modalImg = document.getElementById("modalImage"); // Get the modal image element
+
+            modal.style.display = "block"; // Show the modal
+            modalImg.src = imageSrc; // Set the source of the modal image to the clicked image source
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            var modal = document.getElementById("myModal"); // Get the modal element
+            modal.style.display = "none"; // Hide the modal
+        }
+    </script>
+</body>
+</html>
+

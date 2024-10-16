@@ -1,0 +1,173 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif; /* Use Google Font */
+    background-color: #f8fafc;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section with Animation */
+.hero {
+    height: 250px; /* Increased height for hero section */
+    background-color: #f8fafc; /* Light grey background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+.ml11 {
+    font-weight: 700; /* Bold font */
+    font-size: 8vw; /* Responsive font size */
+}
+
+.ml11 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 0.1em 0.05em 0.15em;
+    color: #111827;
+}
+
+.ml11 .line {
+    opacity: 0; 
+    position: absolute;
+    left: 0;
+    height: 100%; 
+    width: 3px; 
+    background-color: #111827; 
+    transform-origin: 0 50%; 
+}
+
+/* About Section Styles */
+.about-section {
+    background-color: #111827; 
+    padding: 60px 30px; /* Increased padding for more space */
+    color: #f8fafc; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin: 30px 30px; /* More margin between sections */
+    transition: background 0.5s ease; /* Smooth transition for background */
+    position: relative; /* Needed for pseudo-element */
+    overflow: hidden; /* Hide overflow for pseudo-element */
+}
+
+.about-section h2 {
+    color: #40d49c;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.about-section p {
+    font-size: 1.2em;
+}
+
+/* Add hover effect with gradient */
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start from the left */
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, rgba(96, 113, 150, 0.5), rgba(186, 191, 209, 0.5));
+    transition: left 0.5s ease; /* Smooth slide */
+    z-index: 0;
+}
+
+.about-section:hover::before {
+    left: 0; /* Slide in from the left */
+}
+
+.about-section .content {
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Space between for even distribution */
+    align-items: center; /* Center vertically */
+}
+
+.text-content {
+    max-width: 50%; /* Limit width of text section */
+}
+
+.image {
+    flex: 0 0 45%; /* Limit width of image section */
+}
+
+.section-image {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+
+/* Download Section Styles */
+.download-section {
+    background-color: #111827; /* Light background color */
+    padding: 40px 20px;
+    text-align: center;
+    margin: 30px 30px; /* Spacing around the section */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    color: #f8fafc;
+}
+
+/* Download Section Heading */
+.download-section h2 {
+    color: #40d49c; /* Darker text color */
+    font-size: 2em; /* Larger font size */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+/* Download Section Text */
+.download-section p {
+    color: #f8fafc; /* Secondary text color */
+    font-size: 1.2em; /* Normal font size */
+    margin-bottom: 20px; /* Space below text */
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+/* Download Button Styles */
+.download-btn {
+    display: inline-block;
+    background-color: #40d49c; /* Button background color */
+    color: #ffffff; /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    font-size: 1.2em; /* Button font size */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Hover Effect for Download Button */
+.download-btn:hover {
+    background-color: #f8fafc; /* Hover background color */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.download-btn:hover {
+    color: #111827;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-section .content {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .text-content, .image {
+        max-width: 100%; /* Full width */
+    }
+
+    .text-content {
+        margin-bottom: 20px; /* Add space below text */
+    }
+}
+
+
+
+
+
